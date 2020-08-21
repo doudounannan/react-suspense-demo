@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import "antd/dist/antd.css";
+import Switch from "./Switch";
+
+import Filter from "./components/Filter";
 
 function App() {
+  const [useDependency, setUseDependency] = useState(true);
+  const [type, setType] = useState([1]);
+
+  console.log("debug-type", type);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="highlight app flex flex-direction-column">
+      <Switch useDependency={useDependency} />
+      <Filter
+        useDependency={useDependency}
+        setUseDependency={setUseDependency}
+        type={type}
+        setType={setType}
+      />
     </div>
   );
 }
