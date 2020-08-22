@@ -1,0 +1,19 @@
+.full-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2aa198;
+}
+
+.plot {
+    font-size: 14px;
+}
+
+.label {
+    font-size: 16px;
+    color: #B58900;
+}
+
+.year,
+.awards {
+    font-size: 16px;
+}

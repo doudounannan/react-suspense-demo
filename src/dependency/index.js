@@ -1,5 +1,15 @@
 import React from "react";
 
-export default ({ type }) => {
-  return <div className="flex-1">{type}</div>;
+import { typeDependencyCpMap } from "../variable";
+
+export default ({ typeArr }) => {
+  return (
+    <div className="flex-1 flex">
+      {typeArr.map((type) => {
+        const Cp = typeDependencyCpMap[type];
+
+        return <Cp key={type} />;
+      })}
+    </div>
+  );
 };

@@ -1,24 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
 import "./App.css";
 import "antd/dist/antd.css";
-import Switch from "./Switch";
 
+import Switch from "./Switch";
 import Filter from "./components/Filter";
+
+const CACHED_KEY = "cachedTypeArr";
+
+const cachedTypeArr = localStorage.getItem(CACHED_KEY)?.split(",");
 
 function App() {
   const [useDependency, setUseDependency] = useState(true);
-  const [type, setType] = useState([1]);
+  const [typeArr, setTypeArr] = useState(cachedTypeArr ?? ["1"]);
 
-  console.log("debug-type", type);
+  useEffect(() => {
+    if (typeArr.length > 0) {
+      localStorage.setItem(CACHED_KEY, typeArr);
+    } else {
+      localStorage.removeItem(CACHED_KEY);
+    }
+  }, [typeArr]);
 
   return (
-    <div className="highlight app flex flex-direction-column">
-      <Switch useDependency={useDependency} />
+    <div className="highlight app flex flex-direction-column pl-20">
+      <Switch useDependency={useDependency} typeArr={typeArr} />
       <Filter
         useDependency={useDependency}
         setUseDependency={setUseDependency}
-        type={type}
-        setType={setType}
+        typeArr={typeArr}
+        setTypeArr={setTypeArr}
       />
     </div>
   );

@@ -1,0 +1,41 @@
+.list {
+    width: 120px;
+}
+
+.item {
+    cursor: pointer;
+
+    width: 120px;
+}
+
+.image__wrapper {
+    height: 160px;
+}
+
+.image {
+    width: 120px;
+    height: 160px;
+
+    object-fit: cover;
+}
+
+.img-spinner__wrapper {
+    width: 120px;
+    height: 160px;
+}
+
+.rating {
+    color: #93a1a1;
+    font-size: 20px;
+    font-weight: 400;
+
+    padding-left: 30px;
+
+    background: url(../star.svg) no-repeat;
+}
+
+.title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}

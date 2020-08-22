@@ -8,15 +8,20 @@
     "@testing-library/user-event": "^7.1.2",
     "antd": "^4.5.4",
     "classnames": "^2.2.6",
-    "react": "0.0.0-experimental-94c0244ba",
-    "react-dom": "0.0.0-experimental-94c0244ba",
-    "react-scripts": "3.4.3"
+    "json-server": "^0.16.1",
+    "react": "0.0.0-experimental-5faf377df",
+    "react-dom": "0.0.0-experimental-5faf377df",
+    "react-lazyload": "^3.0.0",
+    "react-scripts": "3.4.3",
+    "react-spinners-kit": "^1.9.1"
   },
+  "proxy": "http://localhost:3004",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "api": "json-server --watch db.json --port 3004"
   },
   "eslintConfig": {
     "extends": "react-app"

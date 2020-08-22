@@ -1,6 +1,7 @@
 import React from "react";
+
 import Dependency from "./dependency";
 
-export default ({ useDependency, type }) => {
-  return useDependency ? <Dependency type={type} /> : null;
+export default ({ useDependency, typeArr }) => {
+  return useDependency ? <Dependency typeArr={typeArr} /> : null;
 };
